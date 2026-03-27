@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Los Días de Samuel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="header">
+  <nav class="nav">
+    <h1 class="logo">Samuel</h1>
+    <a href="#ver" class="cta-nav">Entrar</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO CINEMÁTICO -->
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h2 class="glitch">Los Días de Samuel</h2>
+    <p class="fade-in">No todas las decisiones tienen vuelta atrás.</p>
+    <a href="#game" class="btn-primary pulse">Comenzar</a>
+  </div>
+</section>
+
+<!-- EXPERIENCIA INTERACTIVA -->
+<section id="game" class="game">
+  <h3>¿Qué harías tú?</h3>
+  <p>Samuel tiene una decisión...</p>
+
+  <div class="choices">
+    <button onclick="choose('huir')">Huir</button>
+    <button onclick="choose('enfrentar')">Enfrentar</button>
+  </div>
+
+  <p id="result"></p>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="benefits">
+  <div class="card reveal">⚡ Episodios rápidos</div>
+  <div class="card reveal">🎭 Alta carga emocional</div>
+  <div class="card reveal">🔥 Historia adictiva</div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="ver" class="cta">
+  <h3 class="reveal">La historia ya comenzó</h3>
+  <a href="#" class="btn-primary">Ver en YouTube</a>
+  <a href="#" class="btn-secondary">Ver en TikTok</a>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Los Días de Samuel</p>
+</footer>
+
+<script>
+function choose(option) {
+  const result = document.getElementById("result");
+  if(option === "huir"){
+    result.innerText = "Huir fue su primer error...";
+  } else {
+    result.innerText = "Enfrentar cambió todo.";
+  }
+}
+</script>
+
+</body>
+</html>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      el.classList.add('active');
+    }
+  });
+});
+</script>
+
